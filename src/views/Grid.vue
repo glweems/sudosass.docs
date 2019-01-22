@@ -14,8 +14,11 @@
 				</div>
 			</div>
 		</div>
+
 		<h2>Thirds</h2>
-		<div id="grid">
+		
+
+		<div class="grid thirds">
 			<div class="bg-success rounded">
 				<div class="container">
 					<p>1/3</p>
@@ -32,11 +35,32 @@
 				</div>
 			</div>
 		</div>
+		
+		<h2>Forths</h2>
+		
+		<div class="grid forths">
+			<div class="bg-success rounded">
+				<div class="container">
+					<p>1/4</p>
+				</div>
+			</div>
+			<div class="bg-danger rounded">
+				<div class="container">
+					<p>1/4</p>
+				</div>
+			</div>
+			<div class="bg-warning rounded">
+				<div class="container">
+					<p>1/4</p>
+				</div>
+			</div>
+			<div class="bg-info rounded">
+				<div class="container">
+					<p>1/4</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
-<script>
-export default {
-	name: "grid"
-};
-</script>
+

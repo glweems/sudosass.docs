@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Router from "vue-router";
-
 Vue.use(Router);
 
 export default new Router({
@@ -19,6 +18,12 @@ export default new Router({
         import(/* webpackChunkName: "colors" */ "./views/Colors")
     },
     {
+      path: "/buttons",
+      name: "buttons",
+      component: () =>
+        import(/* webpackChunkName: "colors" */ "./views/Buttons")
+    },
+    {
       path: "/typography",
       name: "typography",
       component: () =>
@@ -26,9 +31,21 @@ export default new Router({
     },
     {
       path: "/grid",
-      name: "grid",
+      name: "grids",
       component: () =>
         import(/* webpackChunkName: "grid" */ "./views/Grid")
+    },
+    {
+      path: "/containers",
+      name: "containers",
+      component: () =>
+        import(/* webpackChunkName: "grid" */ "./views/Containers")
+    },
+    {
+      path: "/cards",
+      name: "cards",
+      component: () =>
+        import(/* webpackChunkName: "grid" */ "./views/Cards")
     }
   ]
 });
