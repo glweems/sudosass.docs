@@ -27,6 +27,6 @@ export default {
 
 
 <style lang="scss">
-	@import "../../node-packages/sudosass/scss/app.scss";
+	@import "../../../node-packages/sudosass/scss/app.scss";
 </style>
 
