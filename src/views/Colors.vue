@@ -41,7 +41,7 @@
 
 <script>
 export default {
-	name: "colors"
+	name: "Colors"
 };
 </script>
 

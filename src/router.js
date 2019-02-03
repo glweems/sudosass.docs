@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
-Vue.use(Router);
+
+import Components from "@/library.js";
+
+Vue.use(Router, Components);
 
 export default new Router({
   mode: 'history',
@@ -9,43 +12,50 @@ export default new Router({
       path: "/",
       name: "home",
       component: () =>
-        import(/* webpackChunkName: "home" */ "./views/Home")
+        import(/* webpackChunkName: "HomePage" */ "@/views/Home")
     },
     {
-      path: "/colors",
-      name: "colors",
-      component: () =>
-        import(/* webpackChunkName: "colors" */ "./views/Colors")
+      path: "/docs",
+      name: "Documentation",
+      component: () => import(/* webpackChunkName: "DocumentationPage" */ "@/views/Docs"),
+      children: [
+        {
+          path: "colors",
+          name: "Colors",
+          component: () =>
+            import(/* webpackChunkName: "Docs-Colors" */ "@/views/Colors")
+        },
+        {
+          path: "buttons",
+          name: "Buttons",
+          component: () =>
+            import(/* webpackChunkName: "Docs-Buttons" */ "@/views/Buttons")
+        },
+        {
+          path: "typography",
+          name: "Typography",
+          component: () =>
+            import(/* webpackChunkName: "Docs-Typography" */ "@/views/Typography")
+        },
+        {
+          path: "grid",
+          name: "Grids",
+          component: () =>
+            import(/* webpackChunkName: "Docs-Grid" */ "@/views/Grid")
+        },
+        {
+          path: "containers",
+          name: "Containers",
+          component: () =>
+            import(/* webpackChunkName: "Docs-Containers" */ "@/views/Containers")
+        },
+        {
+          path: "cards",
+          name: "Cards",
+          component: () =>
+            import(/* webpackChunkName: "grid" */ "./views/Cards")
+        }]
     },
-    {
-      path: "/buttons",
-      name: "buttons",
-      component: () =>
-        import(/* webpackChunkName: "colors" */ "./views/Buttons")
-    },
-    {
-      path: "/typography",
-      name: "typography",
-      component: () =>
-        import(/* webpackChunkName: "typography" */ "./views/Typography")
-    },
-    {
-      path: "/grid",
-      name: "grids",
-      component: () =>
-        import(/* webpackChunkName: "grid" */ "./views/Grid")
-    },
-    {
-      path: "/containers",
-      name: "containers",
-      component: () =>
-        import(/* webpackChunkName: "grid" */ "./views/Containers")
-    },
-    {
-      path: "/cards",
-      name: "cards",
-      component: () =>
-        import(/* webpackChunkName: "grid" */ "./views/Cards")
-    }
+
   ]
 });
