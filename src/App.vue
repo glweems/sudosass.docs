@@ -1,8 +1,10 @@
 <template>
 	<div id="app">
 		<NavbarComponent :pages="pages" logoText="SUDO" :between="true"/>
-		<router-view class="hasStickyNav"/>
-		<SidebarComponent :show="sidebarComponent"></SidebarComponent>
+		<div class="layout">
+			<SidebarComponent v-if="sidebarOpen"></SidebarComponent>
+			<router-view class="content"/>
+		</div>
 	</div>
 </template>
 
@@ -17,16 +19,31 @@ export default {
 	},
 	methods: {},
 	computed: {
-		...mapState(["title", "pages", "sidebarComponent"])
+		...mapState(["title", "pages", "sidebarOpen"])
 	}
 };
 </script>
 
 
 <style lang="scss">
-	@import "../../../node-packages/sudosass/scss/app.scss";
-	.hasStickyNav {
-		padding-top: 5em;
+	@import "~sudosass/scss/app.scss";
+	.layout {
+		display: flex;
+		flex-direction: row;
+		height: 93.5vh;
+		.sidebar {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			justify-self: start;
+		}
+		.content {
+			// display: flex;
+			// flex-direction: row;
+			// justify-self: center;
+			width: 100%;
+			text-align: center;
+		}
 	}
 </style>
 

@@ -4,6 +4,7 @@ module.exports = {
     "root": ["./src"],
     "alias": {
       "#": "./src/components/",
+      "~": "./node_modules/",
       "underscore": "lodash"
     }
   }]]

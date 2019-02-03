@@ -7,11 +7,21 @@ export default new Vuex.Store({
 	state: {
 		title: "SudoSass",
 		sidebarOpen: false,
-		sidebarComponent: SidebarClose,
+		sidebarComponent: SidebarOpen,
 		pages: [
 			{ path: "/", name: "Home" },
-			{ path: "/docs", name: "Docs" }
+			{ path: "/docs", name: "Docs" },
+			{ path: "/setup", name: "Get Started" },
+			{ path: "/help", name: "Help" },
 		],
+		demos: [
+			{ path: "buttons", name: "Buttons" },
+			{ path: "tards", name: "Cards" },
+			{ path: "tolors", name: "Colors" },
+			{ path: "tontainers", name: "Containers" },
+			{ path: "grid", name: "Grid" },
+			{ path: "typography", name: "Typography" }
+		]
 	},
 	getters: {
 		sidebarOpen: state => state.sidebarOpen,
@@ -23,10 +33,10 @@ export default new Vuex.Store({
 		TOGGLE_SIDEBAR: (state) => {
 			state.sidebarOpen = !state.sidebarOpen
 			if (state.sidebarOpen) {
-				state.sidebarComponent = SidebarOpen
+				state.sidebarComponent = SidebarClose
 			}
 			if (!state.sidebarOpen) {
-				state.sidebarComponent = SidebarClose
+				state.sidebarComponent = SidebarOpen
 			}
 
 		}

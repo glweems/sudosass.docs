@@ -53,8 +53,8 @@
 		<div class="card">
 			<div class="card-img bg-danger">
 				<a href="/cards" class="overlay-link">Click Me!</a>
-				
-				<img src="../../../prism/img/banner.svg">
+
+				<!-- <img src="../../../prism/img/banner.svg"> -->
 			</div>
 			<div class="body">
 				<p class="title">Card Title</p>

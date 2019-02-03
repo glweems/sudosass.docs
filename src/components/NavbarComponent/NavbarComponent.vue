@@ -1,5 +1,6 @@
 <template>
 	<nav :class="navStyle()">
+		<button class="primary" @click="toggleSidebar()">Sidebar</button>
 		<router-link :to="homePage.path" class="logo">{{ logoText }}</router-link>
 		<nav>
 			<router-link v-for="page in pages" :key="page.name" :to="page.path">{{ page.name }}</router-link>
@@ -42,10 +43,10 @@ export default {
 				style += " sticky";
 			}
 			return style;
+		},
+		computed: {
+			...mapState(["sidebarOpen"])
 		}
-	},
-	computed: {
-		...mapState(["sidebarOpen"])
 	}
 };
 </script>

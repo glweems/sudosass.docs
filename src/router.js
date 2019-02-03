@@ -23,37 +23,37 @@ export default new Router({
           path: "colors",
           name: "Colors",
           component: () =>
-            import(/* webpackChunkName: "Docs-Colors" */ "@/views/Colors")
+            import(/* webpackChunkName: "Docs-Colors" */ "@/views/Demos/Colors")
         },
         {
           path: "buttons",
           name: "Buttons",
           component: () =>
-            import(/* webpackChunkName: "Docs-Buttons" */ "@/views/Buttons")
+            import(/* webpackChunkName: "Docs-Buttons" */ "@/views/Demos/Buttons")
         },
         {
           path: "typography",
           name: "Typography",
           component: () =>
-            import(/* webpackChunkName: "Docs-Typography" */ "@/views/Typography")
+            import(/* webpackChunkName: "Docs-Typography" */ "./views/Demos/Typography")
         },
         {
           path: "grid",
           name: "Grids",
           component: () =>
-            import(/* webpackChunkName: "Docs-Grid" */ "@/views/Grid")
+            import(/* webpackChunkName: "Docs-Grid" */ "@/views/Demos/Grid")
         },
         {
           path: "containers",
           name: "Containers",
           component: () =>
-            import(/* webpackChunkName: "Docs-Containers" */ "@/views/Containers")
+            import(/* webpackChunkName: "Docs-Containers" */ "@/views/Demos/Containers")
         },
         {
           path: "cards",
           name: "Cards",
           component: () =>
-            import(/* webpackChunkName: "grid" */ "./views/Cards")
+            import(/* webpackChunkName: "Docs-Cards" */ "@/views/Demos/Cards")
         }]
     },
 

@@ -1,15 +1,33 @@
 <template>
-	<div><p>Open</p></div>
+	<div class="sidebar">
+		<div class="header">
+			<p class="title">Docs</p>
+		</div>
+	</div>
 </template>
 
 <script>
-import {mapGetters} from "vuex";
+import { mapState, mapMutations, mapGetters } from "vuex";
 export default {
 	name: "SidebarOpen",
-	computed: {
+	methods: {
+		...mapMutations(["TOGGLE_SIDEBAR"]),
+		toggleSidebar() {
+			this.TOGGLE_SIDEBAR(this.state);
+		}
 	},
+	computed: {
+		...mapState(["sidebarOpen"])
+	}
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+	@import "~sudosass/scss/app.scss";
+	.sidebar {
+		display: flex;
+		flex-direction: column;
+		flex-basis: 100%;
+		@include background(primary);
+	}
 </style>
